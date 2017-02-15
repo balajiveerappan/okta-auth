@@ -10,7 +10,7 @@ Spring Boot OAuth2 Micro servcie - Resource Server integrated with Okta Authoriz
 ## Source
 Get source code:
 ```sh
-https://git-codecommit.us-east-1.amazonaws.com/v1/repos/okta-auth-service
+https://github.com/sanjayrawatcg/okta-auth.git
 ```
 
 ## Local
