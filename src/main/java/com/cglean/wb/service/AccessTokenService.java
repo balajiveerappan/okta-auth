@@ -35,7 +35,7 @@ public class AccessTokenService {
         this.restTemplate = restTemplate;
     }
 
-    public Token getAccessToken(User user) {
+    public ResponseEntity<Token> getAccessToken(User user) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
@@ -54,9 +54,8 @@ public class AccessTokenService {
         HttpEntity<?> httpEntity = new HttpEntity<Object>(body, headers);
 
         ResponseEntity<Token> response = restTemplate.exchange(url, HttpMethod.POST, httpEntity, Token.class);
-        Token token = response.getBody();
 
-        return token;
+        return response;
     }
 
 }

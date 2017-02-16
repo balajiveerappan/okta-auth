@@ -4,6 +4,7 @@ import com.cglean.wb.service.AccessTokenService;
 import com.cglean.wb.service.util.Token;
 import com.cglean.wb.service.util.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -22,12 +23,13 @@ public class AccessTokenController {
     }
 
     @PostMapping("/token")
-    public Token securedAuthenticationToken(@RequestBody User user) {
+    public ResponseEntity<Token> securedAuthenticationToken(@RequestBody User user) {
 
-        Token token = accessTokenService.getAccessToken(user);
-        return token;
+        ResponseEntity<Token> tokenResponse = accessTokenService.getAccessToken(user);
+        return tokenResponse;
 
     }
+
 //    Test Method
 //    @GetMapping("/")
 //    public String securedAuthenticationToken() {
